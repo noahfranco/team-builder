@@ -5,23 +5,33 @@ function FormList() {
 
 const [teamMembers, setTeamMembers] = useState({Name: "", Email: ""});
 
+function handleChange(event) {
+
 // This is seting up the user 
-function handler(event) {
-    const creatingUser = { ...teamMembers, [event.target.name]: event.target.value }; 
-    console.log("user change", event.target.name, event.target.value);
-    setTeamMembers(handler); 
+    const changingHandler = { ...teamMembers, [event.target.name]: event.target.value }
+    console.log(
+        "user change",
+        event.target.name,
+        event.target.value
+    );
+    setTeamMembers(changingHandler); 
+// This is seting up the user 
 }
-// This is seting up the user 
+
+
+
+
 
     return(
         <form> 
-            <h2> Sign Up here </h2> 
+            <fieldset> 
+            <legend> Sign Up here </legend> 
             <div> 
                 <div> 
                     <p> Username </p>
                 </div> 
                 <div>
-                    <input type="text" placeholder="Username"/> 
+                    <input type="text" placeholder="Username" onChange="handleChange"/> 
                  </div> 
             </div>
             <div> 
@@ -37,6 +47,7 @@ function handler(event) {
                     <button> Submit </button>  
                 </div> 
             </div> 
+            </fieldset>
         </form>
     )
 }
