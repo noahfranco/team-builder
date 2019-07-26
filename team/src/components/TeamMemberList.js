@@ -1,11 +1,12 @@
 import React from 'react'
+import TeamMemberCard from "./TeamMemberCard.js"
 
  function TeamMemberList(props) {
     return (
         <div>
-            <p> Hello There </p> 
+            { props.members.map(member => <TeamMemberCard member={member}/> )}
         </div>
-    )
-}
+    );
+}; 
 
 export default TeamMemberList; 
